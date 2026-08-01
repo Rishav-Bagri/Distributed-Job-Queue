@@ -1,0 +1,6 @@
+services:
+  redis:
+    image: redis:8-alpine
+    container_name: go-job-queue-redis
+    ports:
+      - "6379:6379"
