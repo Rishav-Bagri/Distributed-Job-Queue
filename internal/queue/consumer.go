@@ -21,7 +21,7 @@ func NewConsumer(client *redis.Client) *Consumer {
 
 func (c *Consumer) Dequeue(ctx context.Context) (*model.Job, error) {
 
-	result, err := c.client.BRPop(ctx, 0, "jobs").Result()
+	result, err := c.client.BRPop(ctx, 0, "key").Result()
 	if err != nil {
 		return nil, err
 	}
